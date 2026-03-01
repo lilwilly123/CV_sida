@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Min CV-sida</title>
+
+        <link rel="stylesheet" href="css/style.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    </head>
+
+    <body class="portfolio-page">
+
+        <div class="top-left-name" id="site-logo">
+            <div class="name-line">
+                <span class="initial">J</span><span class="expand">ONATHAN</span>
+            </div>
+            <div class="name-line">
+                <span class="initial">W</span><span class="expand">ENELL</span>
+            </div>
+        </div>
+
+        <div id="loader-bg"></div>
+
+        <div class="scroll-indicator-wrap">            
+            <div class="scroll-text">Scroll</div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="scrollBar"></div>
+            </div>
+            <div class="scroll-hint" id="scrollHint">Programmerare & Designer</div> 
+
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"class="active">Hem</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="about.html">Om Mig</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <main class="full-screen-portfolio">
+            <div class="portfolio-scroll">
+                <div class="project" 
+                    data-img="images/Jobbigt.png" 
+                    data-title="Jobbigt  AI-driven RPA" 
+                    data-desc="En intelligent bot som automatiserar jobbsökande genom att matcha ditt CV mot annonser och skriva personliga brev med hjälp av AI."
+                    data-page="jobbigt.html"
+                    data-github="https://github.com/lilwilly123/ai-job-bot.git">
+                    <img src="images/Jobbigt.png" alt="Jobbigt">
+                </div>
+                <div class="project"><img src="images/Hej.png" alt="Projekt 2"></div>
+                <div class="project"><img src="images/Hej.png" alt="Projekt 3"></div>
+                <div class="project"><img src="images/Hej.png" alt="Projekt 3"></div>
+                <div class="project"><img src="images/Hej.png" alt="Projekt 3"></div>
+                <div class="project"><img src="images/Hej.png" alt="Projekt 3"></div>
+                <div class="project"><img src="images/Hej.png" alt="Projekt 3"></div>
+                <div class="project"><img src="images/Hej.png" alt="Projekt 3"></div>
+                <div class="project"><img src="images/Hej.png" alt="Projekt 3"></div>
+                
+                </div>
+        </main>
+
+            <div id="projectModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <img id="modal-img" src="" alt="">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-desc"></p>
+                    
+                    <div class="modal-links">
+                        <a id="modal-readmore" href="#" class="modal-btn">Läs mer här</a>
+                        <a id="modal-github" href="#" target="_blank" class="modal-btn secondary">Se koden på GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+        <script src="js/script.js"></script>
+
+    </body>
+</html>

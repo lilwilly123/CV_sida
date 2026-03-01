@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min CV-sida</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header-wrapper">
+        
+        <div class="top-left-name" id="site-logo">
+            <div class="name-line">
+                <span class="initial">J</span><span class="expand">ONATHAN</span>
+            </div>
+            <div class="name-line">
+                <span class="initial">W</span><span class="expand">ENELL</span>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="about.html">Om Mig</a></li>
+                <li><a href="contact.html" class="active">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="loader-bg"></div>
+
+    <main class="cv-page">
+        <header class="cv-header">
+            <h1>Kontakta Mig</h1>
+        </header>
+        <div class="contact-wrapper">
+            <section class="contact-form-section">
+                <form action="https://formspree.io/f/meelvqvg" method="POST" id="contact-form">
+                    <div class="form-group">
+                        <label for="fname">Namn</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Ditt namn">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lname">Efternamn</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Ditt efternamn">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Din email*</label>
+                        <input type="email" id="email" name="email" placeholder="Din email adress" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Meddelande*</label>
+                        <textarea id="message" name="message" placeholder="Ditt meddelande" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Skicka</button>
+                </form>
+            </section>
+
+            <aside class="contact-text-section">
+                <h2 class="section-title">Information</h2>
+                <p>Oavsett om du har specifika frågor, bär på en spännande projektidé eller vill utforska ett framtida samarbete så lyssnar jag gärna. Använd formuläret här intill, så återkommer jag till dig så snart jag kan.</p>
+            </aside>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
