@@ -1,46 +1,40 @@
 // ------ GLOBAL LADDNING OCH FADE LOGIK ------
 
-// Kör skriptet när hela DOM är inläst
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     const logo = document.getElementById('site-logo');
     const loaderBg = document.getElementById('loader-bg');
     
-    // Kolla om användaren redan har sett animationen denna session
-    const hasVisited = sessionStorage.getItem('hasVisited');
+    // 1. Rensa minnet så att animationen alltid tillåts köras
+    sessionStorage.clear();
 
-    if (!hasVisited) {
-        
-        // ------ FÖRSTA BESÖKET ELLER HARD REFRESH ------
-        sessionStorage.setItem('hasVisited', 'true');
-        
-        // Starta animationen på loggan
-        if (logo) logo.classList.add('run-anim');
-        
-        // Tona ut bakgrunden efter att animationen är klar
-        if (loaderBg) {
-            setTimeout(() => {
-                loaderBg.classList.add('loader-finished');
-            }, 2500);
-        }
-    } else {
-        
-        // ------ HAR REDAN BESÖKT SIDAN ------
-        
-        // Hoppa direkt till slutläget för loggan
-        if (logo) logo.classList.add('no-anim');
-        
-        // Göm laddningsbakgrunden omedelbart utan övergång
-        if (loaderBg) {
-            loaderBg.style.display = 'none';
-        }
+    // 2. Förbered loggan (nollställ allt)
+    if (logo) {
+        logo.classList.remove('run-anim', 'no-anim');
+        void logo.offsetWidth; // Tvinga webbläsaren att rita om loggan (Reflow)
     }
 
-    // Hantera intoning av resten av sidans innehåll
-    document.body.style.transition = "opacity 0.5s ease-in-out";
-    document.body.style.opacity = "1";
-    document.body.classList.add("page-loaded");
-});
+    // 3. STEG 1: Börja fada in själva sidan direkt
+    setTimeout(() => {
+        document.body.style.transition = "opacity 0.6s ease-in-out";
+        document.body.style.opacity = "1";
+        document.body.classList.add("page-loaded");
+    }, 100);
 
+    // 4. STEG 2: Ta bort den gråa laddningsskärmen (efter 0.5 sekunder)
+    if (loaderBg) {
+        setTimeout(() => {
+            loaderBg.classList.add('loader-finished');
+        }, 500);
+    }
+
+    // 5. STEG 3: Starta loggans animation (efter 1.2 sekunder)
+    // Nu är sidan helt synlig och användaren hinner fokusera på loggan
+    if (logo) {
+        setTimeout(() => {
+            logo.classList.add('run-anim');
+        }, 1200); 
+    }
+});
 
 // ------ FADE OUT VID KLICK PÅ LÄNKAR ------
 
